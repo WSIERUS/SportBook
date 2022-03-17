@@ -1,6 +1,8 @@
 [
   {
-    "author":"Wojciech", 
+    "_id": 0,
+    "author":"Wojciech",
+    "_authorId" : "wsieradzki",
     "date" : "",
     "title" : "post testowy", 
     "photo" : null,
