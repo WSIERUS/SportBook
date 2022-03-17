@@ -1,0 +1,15 @@
+[
+  {
+    "author":"Wojciech", 
+    "date" : "",
+    "title" : "post testowy", 
+    "photo" : null,
+    "description" : "Tutaj będzie jakiś opis", 
+    "comments" : [
+      { 
+        "author" : "Janek",
+        "comment" : "Fajne wydarzenie się szykuje",
+        "likes" : 4
+      }
+  ]}
+]
