@@ -1,5 +1,4 @@
-[
-  {
+{
     "_id": 0,
     "author":"Wojciech",
     "_authorId" : "wsieradzki",
@@ -13,5 +12,4 @@
         "comment" : "Fajne wydarzenie się szykuje",
         "likes" : 4
       }
-  ]}
-]
+]}
