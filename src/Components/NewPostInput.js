@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import './styles/NewPostInput.css'
+
 const NewPostInput = () => {
 
   let [description, setDescription] = useState('')
@@ -14,9 +16,9 @@ const NewPostInput = () => {
   }
 
   return(
-    <form onSubmit={handleAddPost}>
-      <input type="text" value={description} onChange={handleChangePost}/>
-      <button>Dodaj Post</button>
+    <form onSubmit={handleAddPost} className='new-post-form'>
+        <input type="text" value={description} onChange={handleChangePost} className='new-post-input' placeholder="Napisz post . . ."/>
+        <button className="new-post-button">Dodaj Post</button>
     </form>
   )
 }

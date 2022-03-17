@@ -6,6 +6,7 @@ const MainPage = () => {
   return(
     <>
       <Head/>
+      <div style={{height:'1.5cm'}}></div>
       <Main/>
     </>
   )

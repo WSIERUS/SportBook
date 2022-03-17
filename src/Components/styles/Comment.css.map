@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../Comment.sass"
+    ],
+    "names": [],
+    "file": "Comment.css"
+}

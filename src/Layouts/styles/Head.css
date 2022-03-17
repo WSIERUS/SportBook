@@ -1,6 +1,7 @@
 .head-bar {
   width: 100vw;
   height: 1.5cm;
+  position: fixed;
   border-bottom: 1px solid darkgrey;
   background-color: #89ff65;
   display: -webkit-box;
