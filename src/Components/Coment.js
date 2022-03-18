@@ -2,10 +2,13 @@ import React from "react";
 
 const Comment = (props) => {
 
+  const {author, date, comment} = props.comment
+
   return(
     <div>
-      <span>Autor</span>
-      <span>Komentarz</span>
+      <span className="comment-author">{author}</span>
+      <span className="comment-date">{date}</span>
+      <span>{comment}</span>
     </div>
   )
 }

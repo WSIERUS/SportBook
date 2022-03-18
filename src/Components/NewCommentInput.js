@@ -16,7 +16,7 @@ const NewCommentInput = () => {
   return(
     <form onSubmit={handleAddComment}>
       <input type="text" value={comment} onChange={handleChangeComment}/>
-      <button>Dodaj Komentarz</button>
+      <button>Dodaj</button>
     </form>
   )
 }

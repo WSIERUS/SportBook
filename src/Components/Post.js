@@ -1,19 +1,18 @@
 import React from "react";
 
-import Comment from './Coment'
-import NewCommentInput from './NewCommentInput'
-
 import './styles/Post.css'
 
-const Post = () => {
+const Post = (props) => {
+
+  const {author, date, title, description} = props.post
+
   return(
     <>
-      <div className="post">
-        <span className="post-author">Wojciech Sieradzki</span>
-        <span className="post-date">2022-03-17 23:56</span>
-        <span className="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolores deserunt sequi nemo minima molestias praesentium! Ex culpa vitae atque, sed delectus odio fugiat error minus, quia temporibus rerum voluptatem!</span>
-        <NewCommentInput/>
-        <section className="post-comments">Fetch z komentarzami <Comment/></section>
+      <div className="post" onClick={() => props.handleFocusPost(props.post)}>
+        <span className="post-author">{author}</span>
+        <span className="post-date">{date}</span>
+        <span className="post-title">{title}</span>
+        <span className="post-description">{description}</span>
       </div>
     </>
   )

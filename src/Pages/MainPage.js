@@ -1,13 +1,28 @@
-import React from "react"
-import Head from "../Layouts/Head"
+import React, { useState } from "react"
+
 import Main from "../Layouts/Main"
+import PostOpened from '../Layouts/PostOpened'
+
+import './styles/MainPage.css'
 
 const MainPage = () => {
+
+  let [openPost, setOpenPost] = useState(null)
+
+  function handleFocusPost(post) {
+    setOpenPost(openPost = post)
+  }
+
+  function handleUnFocusPost() {
+    setOpenPost(openPost = null)
+  }
+
   return(
     <>
-      <Head/>
-      <div style={{height:'1.5cm'}}></div>
-      <Main/>
+      {openPost ? <div className="main-post">
+        <PostOpened handleUnFocusPost={handleUnFocusPost} openPost={openPost}/>
+      </div> : null}
+      <Main handleFocusPost={handleFocusPost}/>
     </>
   )
 }
