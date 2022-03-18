@@ -13,15 +13,22 @@ const Main = (props) => {
       author:"Wojciech",
       _authorId : "wsieradzki",
       date : "2022-03-17 23:56",
-      title : "post testowy", 
+      location: 'Wrocław',
+      title : "Tytuł jakiś tam", 
       photo : null,
-      description : "Tutaj będzie jakiś opis", 
+      description : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores debitis sint a distinctio quidem, laudantium culpa itaque aspernatur iste voluptatem facere cum eius cumque officia veritatis impedit quasi quae non.", 
       comments : [
         { 
-          id:0,
+          _id: 0,
           author : "Janek",
           date: '2022-03-18',
           comment : "Fajne wydarzenie się szykuje",
+        },
+        { 
+          _id: 1,
+          author : "Marek",
+          date: '2022-03-19',
+          comment : "Słabo, że nei u mnie",
         }
   ]}
   ])

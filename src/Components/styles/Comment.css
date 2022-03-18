@@ -1,1 +1,26 @@
-/* No CSS *//*# sourceMappingURL=Comment.css.map */
+.comment {
+  margin: 0.5cm 0 0.5cm 0;
+  padding: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-author {
+  font-size: 0.45cm;
+  font-weight: bold;
+}
+
+.comment-date {
+  font-size: 0.3cm;
+  color: grey;
+}
+
+.comment-comment {
+  font-size: 0.4cm;
+}
+/*# sourceMappingURL=Comment.css.map */

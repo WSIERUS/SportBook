@@ -1,6 +1,7 @@
 .post {
   margin: 1cm;
-  width: 65%;
+  width: 5cm;
+  height: 6cm;
   background-color: white;
   padding: 10px;
   display: -webkit-box;
@@ -26,18 +27,8 @@
   margin-top: 0.5cm;
   margin-bottom: 1cm;
   font-size: 14px;
-}
-
-.post-comments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: columns;
-          flex-direction: columns;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 /*# sourceMappingURL=Post.css.map */

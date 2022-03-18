@@ -8,7 +8,7 @@ import './styles/PostOpened.css'
 const PostFocused = (props) => {
 
   const {openPost, handleUnFocusPost} = props
-  const {author, date, title, description, comments} = openPost
+  const {author, date, location, title, description, comments} = openPost
 
   const [wrapComments, setWrapComments] = useState(true)
 
@@ -23,13 +23,15 @@ const PostFocused = (props) => {
           x
         </button>
         <div className="post-opened-author">{author}</div>
-        <div className="post-opened-date">{date}</div>
+        <div className="post-opened-date">{date} {location}</div>
         <div className="post-opened-title">{title}</div>
         <div className="post-opened-description">{description}</div>
         <div className="post-opened-wrap-comments-button" onClick={() => handleWrapComments()}>{wrapComments ? 'Rozwiń Komentarze' : 'Zwiń Komentarze'}</div>
-        {wrapComments ? null : <NewCommentInput/>}
-        {wrapComments ? null : <div className="post-opened-comments">
-          {comments.map(comment => <Comment comment={comment} key={comment.id}/>)}
+        {wrapComments ? null : <div className="post-opened-wrap-comments-section">
+          <NewCommentInput/>
+          <div className="post-opened-comments">
+            {comments.map(comment => <Comment comment={comment} key={comment._id}/>)}
+          </div>
         </div>}
       </div>
     </>

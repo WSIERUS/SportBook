@@ -1,17 +1,63 @@
 .post-opened {
   width: 15cm;
-  height: 20cm;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: #ececec;
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px;
+  font-family: "Poppins", sans-serif;
 }
 
 .close-post-button {
   background: rgba(0, 0, 0, 0);
   border: 1px none;
-  font-size: 20px;
+  font-size: 0.75cm;
   font-weight: bold;
   cursor: pointer;
+}
+
+.post-opened-author {
+  margin: 0.3cm 0.3cm 0cm 0.3cm;
+  font-weight: bold;
+  font-size: 0.55cm;
+}
+
+.post-opened-date {
+  margin: 0cm 0.3cm 0.3cm 0.3cm;
+  color: grey;
+  font-size: 0.3cm;
+}
+
+.post-opened-title {
+  margin: 0.5cm 0.3cm 0.3cm 0.3cm;
+  color: black;
+  font-weight: bold;
+  font-size: 0.45cm;
+}
+
+.post-opened-description {
+  margin: 0cm 0.3cm 0.3cm 0.3cm;
+  color: black;
+  font-size: 0.4cm;
+}
+
+.post-opened-wrap-comments-button {
+  margin: 0.5cm 0.3cm 0.3cm 0.3cm;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: grey;
+  font-size: 0.35cm;
+  cursor: pointer;
+}
+
+.post-opened-wrap-comments-section {
+  margin: 0.4cm 0.3cm 0.2cm 0.3cm;
+}
+
+.post-opened-comments {
+  margin: 0.2cm 0cm 0.2cm 0cm;
 }
 /*# sourceMappingURL=PostOpened.css.map */
