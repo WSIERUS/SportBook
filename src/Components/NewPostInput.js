@@ -16,10 +16,10 @@ const NewPostInput = () => {
   }
 
   return(
-    <form onSubmit={handleAddPost} className='new-post-form'>
+    <div className='new-post-form'>
         <input type="text" value={description} onChange={handleChangePost} className='new-post-input' placeholder="Napisz post . . ."/>
-        <button className="new-post-button">Dodaj Post</button>
-    </form>
+        <button className="new-post-button" onClick={handleAddPost}>Dodaj Post</button>
+    </div>
   )
 }
 

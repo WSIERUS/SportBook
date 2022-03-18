@@ -1,7 +1,6 @@
 .post {
-  margin: 1cm;
-  width: 5cm;
-  height: 6cm;
+  margin: 0.3cm 0.5cm 0.3cm 0.5cm;
+  width: 8cm;
   background-color: white;
   padding: 10px;
   display: -webkit-box;
@@ -25,7 +24,7 @@
 
 .post-description {
   margin-top: 0.5cm;
-  margin-bottom: 1cm;
+  margin-bottom: 0.25cm;
   font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -15,15 +15,16 @@
 }
 
 .new-post-input {
-  height: 1.5cm;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
   border: 1px solid grey;
   border-right: 1px none;
-  padding: 0 10px 0 10px;
-  word-wrap: break-word;
-  word-break: break-all;
+  padding: 5px 10px 5px 10px;
   text-align: start;
   font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 .new-post-button {
@@ -33,5 +34,12 @@
   border-radius: 0%;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
+}
+
+@media (max-width: 16cm) {
+  .new-post-form {
+    margin: 1cm 0.5cm 0.5cm 0.5cm;
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=NewPostInput.css.map */

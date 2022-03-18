@@ -30,7 +30,30 @@ const Main = (props) => {
           date: '2022-03-19',
           comment : "Słabo, że nei u mnie",
         }
-  ]}
+  ]},
+  {
+    _id: 1,
+    author:"Wojciech",
+    _authorId : "wsieradzki",
+    date : "2022-03-17 23:56",
+    location: 'Wrocław',
+    title : "Tytuł jakiś tam", 
+    photo : null,
+    description : "Lorem, ipsum dolor aspernatur istmpedit quasi quae non.", 
+    comments : [
+      { 
+        _id: 0,
+        author : "Janek",
+        date: '2022-03-18',
+        comment : "Kijowe wydarzenie",
+      },
+      { 
+        _id: 1,
+        author : "Marek",
+        date: '2022-03-19',
+        comment : "Ale fajnie",
+      }
+]}
   ])
 
   return(
