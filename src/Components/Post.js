@@ -14,7 +14,7 @@ const Post = (props) => {
         <span className="post-author">{author}</span>
         <span className="post-date">{date}</span>
         <span className="post-title">{title}</span>
-        <span className="post-description">{descriptionSlice + ' . . .'}</span>
+        <span className="post-description">{description.length > 100 ? descriptionSlice +  ' . . .' : descriptionSlice}</span>
       </div>
     </>
   )

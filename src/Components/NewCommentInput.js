@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import './styles/NewCommentInput.css'
 
-const NewCommentInput = () => {
+const NewCommentInput = (props) => {
 
   let [comment, setComment] = useState('')
 
@@ -10,16 +10,11 @@ const NewCommentInput = () => {
     setComment(comment = event.target.value)
   }
 
-  const handleAddComment = (event) => {
-    event.preventDefault()
-    console.log(`dodaj komentarz : ${comment}`)
-    setComment(comment='')
-  }
-
   return(
-    <form onSubmit={handleAddComment} className='add-comment-form'>
+    <div className='add-comment-form'>
       <input type="text" value={comment} onChange={handleChangeComment} className='add-comment-input'/>
-    </form>
+      <button onClick={() => props.handleAddComment(comment)} className='add-comment-button'>Dodaj</button>
+    </div>
   )
 }
 

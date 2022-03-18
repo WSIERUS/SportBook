@@ -1,8 +1,23 @@
+.add-comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .add-comment-input {
   width: calc( 100% - 0.35cm);
   border: 1px solid grey;
   border-radius: 0px;
   outline: none;
   padding: 5px;
+}
+
+.add-comment-button {
+  border: 1px solid grey;
+  border-left: 1px none;
 }
 /*# sourceMappingURL=NewCommentInput.css.map */
