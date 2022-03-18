@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Main from "../Layouts/Main"
 import PostOpened from '../Layouts/PostOpened'
@@ -9,6 +9,8 @@ const MainPage = () => {
 
   let [openPost, setOpenPost] = useState(null)
 
+  let [userName, setUserName] = useState('Guest')
+
   function handleFocusPost(post) {
     setOpenPost(openPost = post)
   }
@@ -17,14 +19,19 @@ const MainPage = () => {
     setOpenPost(openPost = null)
   }
 
+  useEffect(() => {
+    setUserName(userName = window.prompt('Podaj swój Nick'))
+  }, [1])
+
   return(
     <>
       {openPost ? <div className="main-post">
-        <PostOpened handleUnFocusPost={handleUnFocusPost} openPost={openPost}/>
+        <PostOpened handleUnFocusPost={handleUnFocusPost} openPost={openPost} userName={userName}/>
       </div> : null}
-      <Main handleFocusPost={handleFocusPost}/>
+      <Main handleFocusPost={handleFocusPost} userName={userName}/>
     </>
   )
 }
+
 
 export default MainPage
