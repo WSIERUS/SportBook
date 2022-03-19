@@ -71,12 +71,22 @@ const MainPage = () => {
       description: description,
       comments:[]
     }])
-    console.log(posts)
+
   }
 
-  function handleAddComment(comment) {
-    const array = openPost
-    console.log(openPost._id) // Komentarze do postu
+  function handleAddComment(comment, posts, openPost) {
+    if(comment.length <= 8) {
+      return alert("kometarz musi zawierać minimum 8 znaków")
+    }
+    const date = new Date()
+    const commentToObject = {
+      _id: openPost.comments.length,
+      author: userName ? userName : "Guest",
+      date: `${date.getFullYear()}-${("0" + (date.getMonth()+1)).slice(-2)}-${("0" + date.getDate()).slice(-2)} ${date.getHours()}:${date.getMinutes()}`,
+      comment: comment
+    }
+    posts.find(post => post._id === openPost._id).comments[openPost.comments.length] = commentToObject
+    changePosts(oldPost => [...oldPost])
   }
 
   function handleFocusPost(post) {

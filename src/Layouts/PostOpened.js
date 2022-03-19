@@ -28,7 +28,7 @@ const PostFocused = (props) => {
         <div className="post-opened-description">{description}</div>
         <div className="post-opened-wrap-comments-button" onClick={() => handleWrapComments()}>{wrapComments ? 'Rozwiń Komentarze' : 'Zwiń Komentarze'}</div>
         {wrapComments ? null : <div className="post-opened-wrap-comments-section">
-          <NewCommentInput handleAddComment={handleAddComment} openPost={openPost}/>
+          <NewCommentInput handleAddComment={handleAddComment} openPost={openPost} posts={posts}/>
           <div className="post-opened-comments">
             {comments.map(comment => <Comment comment={comment} key={comment._id}/>)}
           </div>

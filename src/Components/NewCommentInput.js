@@ -13,7 +13,7 @@ const NewCommentInput = (props) => {
   return(
     <div className='add-comment-form'>
       <input type="text" value={comment} onChange={handleChangeComment} className='add-comment-input'/>
-      <button onClick={() => props.handleAddComment(comment)} className='add-comment-button'>Dodaj</button>
+      <button onClick={() => props.handleAddComment(comment, props.posts, props.openPost)} className='add-comment-button'>Dodaj</button>
     </div>
   )
 }

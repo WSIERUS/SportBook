@@ -7,10 +7,11 @@ import './styles/Main.css'
 
 const Main = (props) => {
 
-  const {posts, changePosts, handleAddPost} = props
+  const {posts, handleAddPost} = props
 
   function handleAddComment(comment) {
     console.log(posts.findIndex === 3)
+    console.log(posts, comment)
   }
 
   return(
