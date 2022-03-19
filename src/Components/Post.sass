@@ -1,10 +1,28 @@
 .post
-  margin: 0.3cm 0.5cm 0.3cm 0.5cm
-  width: 8cm
+  margin: 0.5cm 0.4cm 0.3cm 0.4cm
+  border: 1px solid white
   background-color: white
+  width: 8cm
   padding: 10px
   display: flex
   flex-direction: column
+  cursor: pointer
+
+.post-new
+  margin: 0.5cm 0.4cm 0.3cm 0.4cm
+  border: 1px solid white
+  background-color: white
+  width: 5cm
+  padding: 10px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  font-size: 1.5cm
+  cursor: pointer
+
+.post-moved
+  border: 1px solid red
 
 .post-author
   font-size: 18px
@@ -14,8 +32,19 @@
   font-size: 13px
   color: grey
 
+.post-title
+  margin-top: 0.5cm
+  margin-bottom: 0.25cm
+  font-size: 0.4cm
+  font-weight: bold
+  display: flex
+
 .post-description
   margin-top: 0.5cm
   margin-bottom: 0.25cm
-  font-size: 14px
+  font-size: 0.37cm
   display: flex
+
+@media ( max-width: 16cm )
+  .post-new
+    width: 8cm

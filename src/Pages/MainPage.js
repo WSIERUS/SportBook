@@ -7,6 +7,8 @@ import PostOpened from '../Layouts/PostOpened'
 
 import './styles/MainPage.css'
 
+import '../Images/background.jpg'
+
 const MainPage = () => {
   
   let [userName, setUserName] = useState('Guest')
@@ -66,20 +68,24 @@ const MainPage = () => {
     setOpenNewPostInput(openNewPostInput = true)
   }
 
-  function handleAddPost(title, description, user) {
+  function handleCloseAddPost() {
+    setOpenNewPostInput(openNewPostInput = false)
+  }
+
+  function handleAddPost(title, description) {
     const index = posts.length
     const date = new Date()
     changePosts(oldPost => [...oldPost, {
       _id:index,
-      author: user,
-      _authorId: user,
+      author: userName ? userName : 'Geust',
+      _authorId: userName,
       date: `${date.getFullYear()}-${("0" + (date.getMonth()+1)).slice(-2)}-${("0" + date.getDate()).slice(-2)} ${date.getHours()}:${date.getMinutes()}`,
       title: title,
       photo: null,
       description: description,
       comments:[]
     }])
-
+    handleCloseAddPost()
   }
 
   function handleAddComment(comment, posts, openPost) {
@@ -112,7 +118,7 @@ const MainPage = () => {
   return(
     <>
       {openNewPostInput ? 
-        <NewPostInput handleNewPostOpen={handleNewPostOpen}/>
+        <NewPostInput handleAddPost={handleAddPost} handleCloseAddPost={handleCloseAddPost}/>
       : null}
       {openPost ? <div className="main-post">
         <PostOpened handleUnFocusPost={handleUnFocusPost} openPost={openPost} userName={userName} handleAddComment={handleAddComment} posts={posts}/>

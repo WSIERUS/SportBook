@@ -19,8 +19,19 @@ const NewPostInput = (props) => {
   return(
     <div className="new-post">
       <div className='new-post-form'>
-        <input type="text" value={title} onChange={handleChangeTitle} className='new-post-input' placeholder="Napisz tytuł . . ."/>
-        <input type="text" value={description} onChange={handleChangeDescription} className='new-post-input' placeholder="Napisz opis postu . . ."/>
+        <div style={
+          {
+            fontWeight:'bold',
+            cursor: 'pointer',
+            fontSize:'0.75cm',
+            fontFamily: 'Poppins, sans-serif',
+            fontWeight: 'bolder',
+          }
+        } 
+          onClick={() =>props.handleCloseAddPost()}
+        >x</div>
+        <input type="text" value={title} onChange={handleChangeTitle} className='new-post-title' placeholder="Napisz tytuł . . ." max={10}/>
+        <textarea type="text" value={description} onChange={handleChangeDescription} className='new-post-description' placeholder="Napisz opis postu . . ."/>
         <button className="new-post-button" onClick={() => props.handleAddPost(title, description, props.userName)}>Dodaj Post</button>
       </div>
     </div>

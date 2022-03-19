@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Post from "../Components/Post";
 import NewPost from "../Components/NewPost";
 
 import './styles/Main.css'
 
+import BG from '../Images/background.jpg'
+
 const Main = (props) => {
 
-  const {posts, handleAddPost, handleNewPostOpen} = props
+  const {posts, handleNewPostOpen} = props
 
   function handleAddComment(comment) {
     console.log(posts.findIndex === 3)
