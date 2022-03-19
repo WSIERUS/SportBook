@@ -61,8 +61,13 @@ const MainPage = () => {
         date: '2022-03-19',
         comment : "Ale fajnie",
       }
-]}
+    ]}
   ])
+
+  fetch('http://api.nbp.pl/api/exchangerates/rates/a/usd?format=json')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
 
   function handleNewPostOpen() {
     setOpenNewPostInput(openNewPostInput = true)
@@ -73,7 +78,7 @@ const MainPage = () => {
   }
 
   function handleAddPost(title, description) {
-    const index = posts.length
+    if(title.length >= 1 && description.length >= 5){const index = posts.length
     const date = new Date()
     changePosts(oldPost => [...oldPost, {
       _id:index,
@@ -85,7 +90,8 @@ const MainPage = () => {
       description: description,
       comments:[]
     }])
-    handleCloseAddPost()
+    handleCloseAddPost()}
+    else alert('Post musi posiadać tytuł i minimum 5 znaków w opisie')
   }
 
   function handleAddComment(comment, posts, openPost) {

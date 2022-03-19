@@ -1,8 +1,8 @@
 .post {
   margin: 0.5cm 0.4cm 0.3cm 0.4cm;
+  width: 7cm;
   border: 1px solid white;
   background-color: white;
-  width: 8cm;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,7 +70,7 @@
   display: flex;
 }
 
-@media (max-width: 16cm) {
+@media (max-width: 17cm) {
   .post-new {
     width: 8cm;
   }

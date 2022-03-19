@@ -1,14 +1,16 @@
 .post-opened {
   margin: 0.5cm;
   width: 15cm;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  max-height: calc(100% - 2cm);
   background-color: #ececec;
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px;
   font-family: "Poppins", sans-serif;
+  overflow-y: auto;
 }
 
 .close-post-button {
@@ -17,10 +19,11 @@
   font-size: 0.75cm;
   font-weight: bold;
   cursor: pointer;
+  position: fixed;
 }
 
 .post-opened-author {
-  margin: 0.3cm 0.3cm 0cm 0.3cm;
+  margin: 1.2cm 0.3cm 0cm 0.3cm;
   font-weight: bold;
   font-size: 0.55cm;
 }
@@ -60,5 +63,6 @@
 
 .post-opened-comments {
   margin: 0.2cm 0cm 0.2cm 0cm;
+  overflow-y: auto;
 }
 /*# sourceMappingURL=PostOpened.css.map */
