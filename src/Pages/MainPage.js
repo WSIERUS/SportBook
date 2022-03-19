@@ -17,57 +17,17 @@ const MainPage = () => {
 
   let [openNewPostInput, setOpenNewPostInput] = useState(null)
 
-  let [posts, changePosts] = useState([
-    {
-      _id: 0,
-      author:"Wojciech",
-      _authorId : "wsieradzki",
-      date : "2022-03-17 23:56",
-      title : "Tytuł jakiś tam", 
-      photo : null,
-      description : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores debitis sint a distinctio quidem, laudantium culpa itaque aspernatur iste voluptatem facere cum eius cumque officia veritatis impedit quasi quae non.", 
-      comments : [
-        { 
-          _id: 0,
-          author : "Janek",
-          date: '2022-03-18',
-          comment : "Fajne wydarzenie się szykuje",
-        },
-        { 
-          _id: 1,
-          author : "Marek",
-          date: '2022-03-19',
-          comment : "Słabo, że nei u mnie",
-        }
-  ]},
-  {
-    _id: 1,
-    author:"Wojciech",
-    _authorId : "wsieradzki",
-    date : "2022-03-17 23:56",
-    title : "Tytuł jakiś tam", 
-    photo : null,
-    description : "Lorem, ipsum dolor aspernatur istmpedit quasi quae non.", 
-    comments : [
-      { 
-        _id: 0,
-        author : "Janek",
-        date: '2022-03-18',
-        comment : "Kijowe wydarzenie",
-      },
-      { 
-        _id: 1,
-        author : "Marek",
-        date: '2022-03-19',
-        comment : "Ale fajnie",
-      }
-    ]}
-  ])
+  let [posts, changePosts] = useState('')
 
-  fetch('http://api.nbp.pl/api/exchangerates/rates/a/usd?format=json')
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err))
+  function fetchApi() {
+    fetch('https://wsierus.github.io/api/posts.json')
+    .then(json => json.json())
+    .then(data => {
+      changePosts(posts = data)
+    })
+  }
+
+  // Można zrobić funkcje BackEnd zwracającą JSON w celu aktualizacji danych (file system)
 
   function handleNewPostOpen() {
     setOpenNewPostInput(openNewPostInput = true)
@@ -78,11 +38,11 @@ const MainPage = () => {
   }
 
   function handleAddPost(title, description) {
-    if(title.length >= 1 && description.length >= 5){const index = posts.length
+    if(title.length >= 1 && title.length <= 100 && description.length >= 5){const index = posts.length
     const date = new Date()
     changePosts(oldPost => [...oldPost, {
       _id:index,
-      author: userName ? userName : 'Geust',
+      author: userName ? userName : 'Guest',
       _authorId: userName,
       date: `${date.getFullYear()}-${("0" + (date.getMonth()+1)).slice(-2)}-${("0" + date.getDate()).slice(-2)} ${date.getHours()}:${date.getMinutes()}`,
       title: title,
@@ -94,7 +54,7 @@ const MainPage = () => {
     else alert('Post musi posiadać tytuł i minimum 5 znaków w opisie')
   }
 
-  function handleAddComment(comment, posts, openPost) {
+  function handleAddComment(comment, posts, openPost) { 
     if(comment.length <= 0) {
       return alert("kometarz musi zawierać minimum jeden znak")
     }
@@ -121,6 +81,10 @@ const MainPage = () => {
     setUserName(userName = window.prompt('Podaj swój Nick'))
   }, [1])
 
+  useEffect(() => {
+    fetchApi()
+  }, [1])
+
   return(
     <>
       {openNewPostInput ? 
@@ -134,5 +98,8 @@ const MainPage = () => {
   )
 }
 
+// Dodać :
+// usuwanie komentarzy
+// poprawki stylistyczne
 
 export default MainPage

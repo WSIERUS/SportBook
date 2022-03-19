@@ -14,8 +14,8 @@ const Main = (props) => {
       <div className="main">
         <div className="posts">
           <NewPost handleNewPostOpen={handleNewPostOpen}/>
-          {posts.map(post => <Post handleFocusPost={props.handleFocusPost} post={post} key={post._id} />)
-            .sort((a,b) => {if(a.props.post.date > b.props.post.date) return -1})
+          {posts ? posts.map(post => <Post handleFocusPost={props.handleFocusPost} post={post} key={post._id} />)
+            .sort((a,b) => {if(a.props.post.date > b.props.post.date) return -1}) : null
           }
         </div>
       </div>
