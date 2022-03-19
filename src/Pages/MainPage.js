@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import NewPostInput from "../Components/NewPostInput"
+
+import NewPostInput from "../Layouts/NewPostInput"
 
 import Main from "../Layouts/Main"
 import PostOpened from '../Layouts/PostOpened'
@@ -65,7 +66,7 @@ const MainPage = () => {
     setOpenNewPostInput(openNewPostInput = true)
   }
 
-  function handleAddPost(description, user) {
+  function handleAddPost(title, description, user) {
     const index = posts.length
     const date = new Date()
     changePosts(oldPost => [...oldPost, {
@@ -73,7 +74,7 @@ const MainPage = () => {
       author: user,
       _authorId: user,
       date: `${date.getFullYear()}-${("0" + (date.getMonth()+1)).slice(-2)}-${("0" + date.getDate()).slice(-2)} ${date.getHours()}:${date.getMinutes()}`,
-      title: 'jakiś',
+      title: title,
       photo: null,
       description: description,
       comments:[]
