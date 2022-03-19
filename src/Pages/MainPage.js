@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import NewPostInput from "../Components/NewPostInput"
 
 import Main from "../Layouts/Main"
 import PostOpened from '../Layouts/PostOpened'
@@ -6,10 +7,12 @@ import PostOpened from '../Layouts/PostOpened'
 import './styles/MainPage.css'
 
 const MainPage = () => {
+  
+  let [userName, setUserName] = useState('Guest')
 
   let [openPost, setOpenPost] = useState(null)
 
-  let [userName, setUserName] = useState('Guest')
+  let [openNewPostInput, setOpenNewPostInput] = useState(null)
 
   let [posts, changePosts] = useState([
     {
@@ -58,6 +61,10 @@ const MainPage = () => {
 ]}
   ])
 
+  function handleNewPostOpen() {
+    setOpenNewPostInput(openNewPostInput = true)
+  }
+
   function handleAddPost(description, user) {
     const index = posts.length
     const date = new Date()
@@ -75,8 +82,8 @@ const MainPage = () => {
   }
 
   function handleAddComment(comment, posts, openPost) {
-    if(comment.length <= 8) {
-      return alert("kometarz musi zawierać minimum 8 znaków")
+    if(comment.length <= 0) {
+      return alert("kometarz musi zawierać minimum jeden znak")
     }
     const date = new Date()
     const commentToObject = {
@@ -103,10 +110,13 @@ const MainPage = () => {
 
   return(
     <>
+      {openNewPostInput ? 
+        <NewPostInput handleNewPostOpen={handleNewPostOpen}/>
+      : null}
       {openPost ? <div className="main-post">
         <PostOpened handleUnFocusPost={handleUnFocusPost} openPost={openPost} userName={userName} handleAddComment={handleAddComment} posts={posts}/>
       </div> : null}
-      <Main handleFocusPost={handleFocusPost} userName={userName} posts={posts} changePosts={changePosts} handleAddPost={handleAddPost}/>
+      <Main handleFocusPost={handleFocusPost} userName={userName} posts={posts} changePosts={changePosts} handleAddPost={handleAddPost} handleNewPostOpen={handleNewPostOpen}/>
     </>
   )
 }
