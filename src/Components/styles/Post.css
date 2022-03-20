@@ -72,9 +72,9 @@
   display: flex;
 }
 
-@media (max-width: 17cm) {
+@media (max-width: 23cm) {
   .post-new {
-    width: 8cm;
+    width: 7cm;
   }
 }
 /*# sourceMappingURL=Post.css.map */

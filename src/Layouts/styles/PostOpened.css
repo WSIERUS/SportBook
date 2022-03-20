@@ -18,6 +18,7 @@
   border: 1px none;
   font-size: 0.75cm;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   position: fixed;
 }
@@ -54,6 +55,7 @@
   width: max-content;
   color: grey;
   font-size: 0.35cm;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 

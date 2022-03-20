@@ -30,7 +30,9 @@ const PostFocused = (props) => {
         {wrapComments ? null : <div className="post-opened-wrap-comments-section">
           <NewCommentInput handleAddComment={handleAddComment} openPost={openPost} posts={posts}/>
           <div className="post-opened-comments">
-            {comments.map(comment => <Comment comment={comment} key={comment._id}/>)}
+            {comments.map(comment => <Comment comment={comment} key={comment._id}/>).sort((a,b) => {
+              if(a.props.comment.date > b.props.comment.date) return -1
+            })}
           </div>
         </div>}
       </div>
