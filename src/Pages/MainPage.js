@@ -7,8 +7,6 @@ import PostOpened from '../Layouts/PostOpened'
 
 import './styles/MainPage.css'
 
-import '../Images/background.jpg'
-
 const MainPage = () => {
   
   let [userName, setUserName] = useState('Guest')
